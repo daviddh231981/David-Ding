@@ -1,3 +1,5 @@
+# Visit site at https://daviddh231981.github.io/David-Ding/
+
 # Personal Landing Page
 
 This is a simple, responsive personal landing page scaffold. It includes:
