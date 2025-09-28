@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (current === 'light') root.classList.add('light');
   updateThemeButton();
 
-  if (themeToggle){
+  if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const nowLight = root.classList.toggle('light');
       localStorage.setItem('theme', nowLight ? 'light' : 'dark');
@@ -21,24 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function updateThemeButton(){
+  function updateThemeButton() {
     if (!themeToggle) return;
     const isLight = root.classList.contains('light');
-    themeToggle.textContent = isLight ? '☀️' : '🌙';
+    themeToggle.textContent = isLight ? 'Light' : 'Dark';
     themeToggle.setAttribute('aria-pressed', String(isLight));
   }
 
-  // simple contact form handler (no backend) — simulate send
+  // simple contact form handler (no backend) - simulate send
   const form = document.getElementById('contactForm');
   const status = document.getElementById('contactStatus');
-  if (form){
+  if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const data = new FormData(form);
       const name = data.get('name');
-      status.textContent = 'Sending…';
+      status.textContent = 'Sending...';
       setTimeout(() => {
-        status.textContent = `Thanks ${name || ''}! This is a demo form — configure an endpoint to send messages.`;
+        status.textContent = `Thanks ${name || ''}! This is a demo form - configure an endpoint to send messages.`;
         form.reset();
       }, 900);
     });
